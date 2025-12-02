@@ -1,7 +1,27 @@
+// Root TypeScript configuration for personal-ledger-react
+// This file sets up project references for modular TypeScript compilation.
+// It separates configurations for the React app (tsconfig.app.json) and Node.js tools (tsconfig.node.json).
+// This improves build performance and allows different settings for different parts of the project.
+
 {
+  // Compiler options shared across referenced projects
+  "compilerOptions": {
+    // Base directory for resolving non-relative module names
+    "baseUrl": ".",
+    // Path mapping for absolute imports using @ alias (needed for Shadcn UI and project structure)
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  // Explicitly include no files at the root level (handled by references)
   "files": [],
+  // Project references for modular compilation
   "references": [
+    // Reference to the app-specific TypeScript config
     { "path": "./tsconfig.app.json" },
+    // Reference to the Node.js build tools config
     { "path": "./tsconfig.node.json" }
   ]
 }

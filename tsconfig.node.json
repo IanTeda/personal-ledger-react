@@ -1,26 +1,49 @@
+// Node.js-specific TypeScript configuration for personal-ledger-react
+// This config defines compiler options for build tools and scripts (e.g., Vite config) running in Node.js.
+// It includes Node.js types, bundler compatibility, and strict checking for development tooling.
+// Referenced by the root tsconfig.json for modular compilation.
+
 {
   "compilerOptions": {
+    // Path to store incremental compilation information for faster rebuilds
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    // Target ECMAScript version for compiled JavaScript output (ES2023 for modern Node.js)
     "target": "ES2023",
+    // Include type definitions for ES2023 features
     "lib": ["ES2023"],
+    // Use ESNext module system for better tree-shaking
     "module": "ESNext",
+    // Include Node.js type definitions for global objects and APIs
     "types": ["node"],
+    // Skip type checking of declaration files for faster compilation
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    /* Bundler mode settings for Vite compatibility */
+    // Use bundler resolution algorithm for modules
     "moduleResolution": "bundler",
+    // Allow importing TypeScript extensions in import statements
     "allowImportingTsExtensions": true,
+    // Enforce explicit type imports for better module syntax
     "verbatimModuleSyntax": true,
+    // Force module detection to ensure proper module handling
     "moduleDetection": "force",
+    // Do not emit JavaScript files (handled by the build process)
     "noEmit": true,
 
-    /* Linting */
+    /* Linting and strict type checking */
+    // Enable all strict type checking options
     "strict": true,
+    // Report errors on unused local variables
     "noUnusedLocals": true,
+    // Report errors on unused function parameters
     "noUnusedParameters": true,
+    // Allow only erasable TypeScript syntax for better compatibility
     "erasableSyntaxOnly": true,
+    // Report errors on fallthrough cases in switch statements
     "noFallthroughCasesInSwitch": true,
+    // Report errors on unchecked side effect imports
     "noUncheckedSideEffectImports": true
   },
+  // Include build tool files like vite.config.ts for compilation
   "include": ["vite.config.ts"]
 }

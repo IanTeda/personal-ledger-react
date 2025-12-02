@@ -6,6 +6,8 @@ This repository contains the React frontend for a personal ledger application. I
 ## Tech Stack
 - **Frontend Framework**: React with TypeScript
 - **Build Tool**: Vite for fast development and optimized builds
+- **Routing**: TanStack Router for client-side routing
+- **Data Fetching**: TanStack Query for server state management and caching
 - **gRPC Client**: TypeScript client generated from protobuf files using gRPC-Web for browser compatibility
 - **Desktop Deployment**: Tauri for cross-platform desktop apps
 - **Styling**: Tailwind CSS with shadcn/ui components for consistent, accessible UI
